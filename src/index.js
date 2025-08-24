@@ -3,6 +3,11 @@ import { currConditions } from "./processData";
 
 import sunnyImage from "./assets/SVG/1st Set - Color/clear-day.svg";
 
-const data = currConditions();
+const input = document.querySelector("#location");
+const button = document.querySelector("#search");
 
-console.log(data);
+button.addEventListener("click", () => {
+  const currData = currConditions(input.value);
+
+  currData.then((result) => console.log(result));
+});

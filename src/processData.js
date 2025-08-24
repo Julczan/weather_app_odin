@@ -1,7 +1,7 @@
 import { getWeatherData } from "./weatherAPI";
 
-async function currConditions() {
-  const data = await getWeatherData("Kraków");
+async function currConditions(location) {
+  const data = await getWeatherData(location);
   const temp = data.currentConditions.temp;
   const icon = data.currentConditions.icon;
   const feelsLike = data.currentConditions.feelslike;
