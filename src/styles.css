@@ -20,3 +20,13 @@ input {
   justify-content: center;
   align-items: center;
 }
+
+.container {
+  border: 2px black solid;
+  width: 800px;
+  height: 400px;
+}
+
+.address {
+  font-size: 2rem;
+}

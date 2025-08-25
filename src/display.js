@@ -10,6 +10,8 @@ async function displayData() {
   const time = document.createElement("div");
   const sunset = document.createElement("div");
 
+  address.className = "address";
+
   container.textContent = "";
 
   const data = await getDataAndIcon();
