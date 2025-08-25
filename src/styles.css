@@ -13,3 +13,10 @@ header {
 input {
   padding: 10px 20px;
 }
+
+.display {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
