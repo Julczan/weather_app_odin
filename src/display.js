@@ -1,6 +1,6 @@
 import { getDataAndIcon } from ".";
 
-async function displayData() {
+async function displayTodayData() {
   const container = document.querySelector(".container");
   const address = document.createElement("div");
   const icon = document.createElement("img");
@@ -39,4 +39,8 @@ async function displayData() {
   container.appendChild(sunset);
 }
 
-export { displayData };
+function createNav() {}
+
+function displayDailyData() {}
+
+export { displayTodayData };

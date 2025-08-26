@@ -13,9 +13,14 @@ header {
 input {
   padding: 10px 20px;
 }
-
+.nav {
+  height: 5vh;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
 .display {
-  height: 90vh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;

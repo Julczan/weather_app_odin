@@ -1,12 +1,13 @@
 import "./styles.css";
-import { currConditions } from "./processData";
-import { displayData } from "./display";
+import { currConditions, dailyConditions } from "./processData";
+import { displayTodayData } from "./display";
 
 const input = document.querySelector("#location");
 const button = document.querySelector("#search");
 
 button.addEventListener("click", () => {
-  displayData();
+  displayTodayData();
+  getDailyData();
 });
 
 function capitalizeInput(input) {
@@ -21,6 +22,12 @@ async function getDataAndIcon() {
   const iconSrc = icon.default;
 
   return { currData, iconSrc };
+}
+
+async function getDailyData() {
+  const inputValue = capitalizeInput(input.value);
+  const dailyData = await dailyConditions(inputValue);
+  console.log(dailyData);
 }
 
 export { getDataAndIcon };

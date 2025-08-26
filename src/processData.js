@@ -2,7 +2,6 @@ import { getWeatherData } from "./weatherAPI";
 
 async function currConditions(location) {
   const data = await getWeatherData(location);
-  console.log(data);
   const address = data.address;
   const time = data.currentConditions.datetime;
   const temp = data.currentConditions.temp;
@@ -17,4 +16,15 @@ async function currConditions(location) {
   return { address, time, icon, tempInCels, feelsLikeCels, windspeed, sunset };
 }
 
-export { currConditions };
+async function dailyConditions(location) {
+  const data = await getWeatherData(location);
+  const daysArr = data.days;
+  const dailyData = daysArr.map((day) => ({
+    icon: day.icon,
+    date: day.datetime,
+    temp: day.temp,
+  }));
+  return { dailyData };
+}
+
+export { currConditions, dailyConditions };
