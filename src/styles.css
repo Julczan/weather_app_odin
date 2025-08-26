@@ -24,9 +24,32 @@ input {
 .container {
   border: 2px black solid;
   width: 800px;
-  height: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
 }
 
 .address {
-  font-size: 2rem;
+  font-size: 80px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+}
+.temp {
+  font-size: 90px;
+}
+
+.tempAndIcon {
+  display: flex;
+}
+
+.text {
+  border-top: 2px solid rgba(128, 128, 128, 0.461);
+  width: 90%;
+  text-align: center;
 }

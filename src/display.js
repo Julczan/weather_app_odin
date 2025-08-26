@@ -11,6 +11,12 @@ async function displayData() {
   const sunset = document.createElement("div");
 
   address.className = "address";
+  icon.className = "icon";
+  temp.className = "temp";
+  feelslike.className = "text";
+  wind.className = "text";
+  time.className = "text";
+  sunset.className = "text";
 
   container.textContent = "";
 
@@ -18,11 +24,11 @@ async function displayData() {
 
   address.textContent = data.currData.address;
   icon.src = data.iconSrc;
-  temp.textContent = data.currData.tempInCels;
-  feelslike.textContent = data.currData.feelsLikeCels;
-  wind.textContent = data.currData.windspeed;
-  time.textContent = data.currData.time;
-  sunset.textContent = data.currData.sunset;
+  temp.textContent = data.currData.tempInCels + "°C";
+  feelslike.textContent = "Feels like " + data.currData.feelsLikeCels + "°C";
+  wind.textContent = "Wind speed: " + data.currData.windspeed + " km/h";
+  time.textContent = "Current time: " + data.currData.time;
+  sunset.textContent = "Sunset at " + data.currData.sunset;
 
   container.appendChild(address);
   container.appendChild(icon);
