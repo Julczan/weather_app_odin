@@ -58,3 +58,14 @@ input {
   width: 90%;
   text-align: center;
 }
+
+.card {
+  border: solid 2px black;
+}
+
+.daily-container {
+  display: flex;
+  width: 1300px;
+  height: 400px;
+  gap: 20px;
+}

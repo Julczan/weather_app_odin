@@ -1,30 +1,35 @@
 import { getWeatherData } from "./weatherAPI";
 
+function changeToCels(temp) {
+  return Math.round((temp - 32) / (9 / 5));
+}
+
 async function currConditions(location) {
   const data = await getWeatherData(location);
   const address = data.address;
-  const time = data.currentConditions.datetime;
   const temp = data.currentConditions.temp;
   const icon = data.currentConditions.icon;
   const feelsLike = data.currentConditions.feelslike;
   const sunset = data.currentConditions.sunset;
   const windspeed = data.currentConditions.windspeed;
 
-  const tempInCels = Math.round((temp - 32) / (9 / 5));
-  const feelsLikeCels = Math.round((feelsLike - 32) / (9 / 5));
+  const tempInCels = changeToCels(temp);
+  const feelsLikeCels = changeToCels(feelsLike);
 
-  return { address, time, icon, tempInCels, feelsLikeCels, windspeed, sunset };
+  return { address, icon, tempInCels, feelsLikeCels, windspeed, sunset };
 }
 
 async function dailyConditions(location) {
-  const data = await getWeatherData(location);
+  const data = await getWeatherData("Kraków");
   const daysArr = data.days;
+  console.log(data);
+
   const dailyData = daysArr.map((day) => ({
     icon: day.icon,
     date: day.datetime,
-    temp: day.temp,
+    temp: changeToCels(day.tempmax),
   }));
-  return { dailyData };
+  return dailyData;
 }
 
 export { currConditions, dailyConditions };
