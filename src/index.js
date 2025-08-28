@@ -4,12 +4,20 @@ import { displayDailyData, displayTodayData } from "./display";
 
 const input = document.querySelector("#location");
 const button = document.querySelector("#search");
+const todayBtn = document.querySelector("#today");
+const dailyBtn = document.querySelector("#daily");
 
-button.addEventListener("click", () => {
-  // displayTodayData();
+todayBtn.addEventListener("click", () => {
+  displayTodayData();
+});
+
+dailyBtn.addEventListener("click", () => {
   displayDailyData();
 });
-displayDailyData();
+
+button.addEventListener("click", () => {
+  displayTodayData();
+});
 
 function capitalizeInput(input) {
   return input.charAt(0).toUpperCase() + input.slice(1);

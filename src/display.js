@@ -38,8 +38,6 @@ async function displayTodayData() {
   display.appendChild(container);
 }
 
-function createNav() {}
-
 async function displayDailyData() {
   const data = await getDailyDataAndIcon();
 

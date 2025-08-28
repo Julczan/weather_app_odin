@@ -1,7 +1,7 @@
 import { getWeatherData } from "./weatherAPI";
 
 function changeToCels(temp) {
-  return Math.round((temp - 32) / (9 / 5));
+  return Math.round(((temp - 32) * 5) / 9);
 }
 
 async function currConditions(location) {
@@ -20,10 +20,8 @@ async function currConditions(location) {
 }
 
 async function dailyConditions(location) {
-  const data = await getWeatherData("Kraków");
+  const data = await getWeatherData(location);
   const daysArr = data.days;
-  console.log(data);
-
   const dailyData = daysArr.map((day) => ({
     icon: day.icon,
     date: day.datetime,

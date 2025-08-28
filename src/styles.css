@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 header {
   height: 100px;
@@ -15,9 +17,18 @@ input {
 }
 .nav {
   height: 5vh;
-  border: 2px solid black;
+  border-bottom: 2px solid grey;
+  width: 20vw;
+  align-self: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.nav-btn {
+  border: none;
+  padding: 0px 20px;
+  background-color: white;
+  cursor: pointer;
 }
 .display {
   height: 85vh;
@@ -61,11 +72,16 @@ input {
 
 .card {
   border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
 }
 
 .daily-container {
   display: flex;
-  width: 1300px;
-  height: 400px;
-  gap: 20px;
+  width: 90vw;
+  height: 200px;
+  justify-content: space-between;
 }
