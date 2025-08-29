@@ -1,9 +1,19 @@
 import { getDataAndIcon, getDailyDataAndIcon } from ".";
 
+function loadingSpinner(display) {
+  display.textContent = "";
+  const spinner = document.createElement("div");
+  spinner.className = "loader";
+
+  display.appendChild(spinner);
+}
+
 async function displayTodayData() {
+  const display = document.querySelector(".display");
+
+  loadingSpinner(display);
   const data = await getDataAndIcon();
 
-  const display = document.querySelector(".display");
   const container = document.createElement("div");
   const address = document.createElement("div");
   const icon = document.createElement("img");
@@ -39,9 +49,12 @@ async function displayTodayData() {
 }
 
 async function displayDailyData() {
+  const display = document.querySelector(".display");
+
+  loadingSpinner(display);
+
   const data = await getDailyDataAndIcon();
 
-  const display = document.querySelector(".display");
   const container = document.createElement("div");
   const table = document.createElement("div");
   const dateText = document.createElement("div");
