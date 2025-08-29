@@ -8,15 +8,27 @@ const todayBtn = document.querySelector("#today");
 const dailyBtn = document.querySelector("#daily");
 
 todayBtn.addEventListener("click", () => {
-  displayTodayData();
+  if (input.value === "") {
+    alert("Specify the location");
+  } else {
+    displayTodayData();
+  }
 });
 
 dailyBtn.addEventListener("click", () => {
-  displayDailyData();
+  if (input.value === "") {
+    alert("Specify the location");
+  } else {
+    displayDailyData();
+  }
 });
 
 button.addEventListener("click", () => {
-  displayTodayData();
+  if (input.value === "") {
+    alert("Specify the location");
+  } else {
+    displayTodayData();
+  }
 });
 
 function capitalizeInput(input) {
