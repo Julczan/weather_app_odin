@@ -907,7 +907,6 @@ function changeToCels(temp) {
 
 async function currConditions(location) {
   const data = await getWeatherData(location);
-  console.log(data);
 
   const address = data.address;
   const temp = data.currentConditions.temp;
