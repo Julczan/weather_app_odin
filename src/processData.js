@@ -21,12 +21,16 @@ async function currConditions(location) {
 
 async function dailyConditions(location) {
   const data = await getWeatherData(location);
+
   const daysArr = data.days;
   const dailyData = daysArr.map((day) => ({
     icon: day.icon,
     date: day.datetime,
-    temp: changeToCels(day.tempmax),
+    maxTemp: changeToCels(day.tempmax),
+    minTemp: changeToCels(day.tempmin),
+    windspeed: day.windspeed,
   }));
+
   return dailyData;
 }
 

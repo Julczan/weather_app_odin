@@ -43,27 +43,53 @@ async function displayDailyData() {
 
   const display = document.querySelector(".display");
   const container = document.createElement("div");
+  const table = document.createElement("div");
+  const dateText = document.createElement("div");
+  const weatherText = document.createElement("div");
+  const maxTempText = document.createElement("div");
+  const minTempText = document.createElement("div");
+  const windText = document.createElement("div");
+
+  dateText.textContent = "Date";
+  weatherText.textContent = "Weather";
+  maxTempText.textContent = "Max Temp";
+  minTempText.textContent = "Min Temp";
+  windText.textContent = "Wind";
   container.className = "daily-container";
+  table.className = "table";
+
   display.textContent = "";
 
   for (let i = 0; i < data.length; i++) {
     const card = document.createElement("div");
     const icon = document.createElement("img");
-    const temp = document.createElement("div");
+    const maxTemp = document.createElement("div");
+    const minTemp = document.createElement("div");
     const date = document.createElement("div");
+    const windspeed = document.createElement("div");
 
     card.className = "card";
 
     date.textContent = data[i].date;
-    temp.textContent = data[i].temp + "°C";
+    maxTemp.textContent = data[i].maxTemp + "°C";
+    minTemp.textContent = data[i].minTemp + "°C";
     icon.src = data[i].iconSrc;
+    windspeed.textContent = data[i].windspeed + " km/h";
 
     card.appendChild(date);
     card.appendChild(icon);
-    card.appendChild(temp);
+    card.appendChild(maxTemp);
+    card.appendChild(minTemp);
+    card.appendChild(windspeed);
     container.appendChild(card);
   }
 
+  table.appendChild(dateText);
+  table.appendChild(weatherText);
+  table.appendChild(maxTempText);
+  table.appendChild(minTempText);
+  table.appendChild(windText);
+  display.appendChild(table);
   display.appendChild(container);
 }
 

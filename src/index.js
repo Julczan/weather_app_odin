@@ -40,16 +40,18 @@ async function getDailyDataAndIcon() {
   const dailyData = [];
 
   for (let i = 0; i < data.length; i++) {
-    const temp = data[i].temp;
-    const conditions = data[i].icon;
+    const maxTemp = data[i].maxTemp;
+    const minTemp = data[i].minTemp;
+    const windspeed = data[i].windspeed;
     const date = data[i].date;
     const icon = await import(
       `./assets/PNG/2nd Set - Color/${data[i].icon}.png`
     );
     const iconSrc = icon.default;
-    const dataObj = { temp, conditions, date, iconSrc };
+    const dataObj = { maxTemp, minTemp, date, iconSrc, windspeed };
     dailyData.push(dataObj);
   }
+
   return dailyData;
 }
 

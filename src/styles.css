@@ -17,7 +17,7 @@ input {
 }
 .nav {
   height: 5vh;
-  border-bottom: 2px solid grey;
+  border-bottom: 1px solid grey;
   width: 20vw;
   align-self: center;
   display: flex;
@@ -31,8 +31,9 @@ input {
   cursor: pointer;
 }
 .display {
-  height: 85vh;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -71,17 +72,23 @@ input {
 }
 
 .card {
-  border: solid 2px black;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  border-radius: 5px;
+  justify-content: space-around;
+  border-bottom: 2px black solid;
 }
 
 .daily-container {
   display: flex;
-  width: 90vw;
-  height: 200px;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 60vw;
+  justify-content: flex-start;
+}
+
+.table {
+  display: flex;
+  align-items: center;
+  width: 60vw;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
 }
